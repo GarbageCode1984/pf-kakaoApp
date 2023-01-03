@@ -72,14 +72,14 @@ a {
   padding: 16px;
   position: relative;
 }
-.preview .preview_pic {
+.preview .preview_column .preview_pic {
   height: 50px;
   width: 50px;
   border-radius: 16px;
   background-color: #422d20;
   margin-right: 16px;
 }
-.preview .preview_nick {
+.preview .preview_column .preview_nick {
   width: 50vw;
   font-size: 0.85em;
   margin-bottom: 6px;
@@ -87,7 +87,7 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.preview .preview_msg {
+.preview .preview_column .preview_msg {
   width: 50vw;
   font-size: 0.82em;
   color: #919191;
@@ -98,16 +98,17 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.preview .preview_time {
+.preview .preview_column .preview_time {
   position: absolute;
   top: 10px;
   right: 16px;
   font-size: 0.7em;
   color: #b6b6b6;
 }
-.preview .bubble {
+
+.bubble {
   height: auto;
-  width: auto;
+  width: 100%;
   border-radius: 4px;
   position: relative;
   background-color: #fff;
@@ -115,7 +116,7 @@ a {
   padding: 10px;
   font-size: 0.9em;
 }
-.preview .bubble::before {
+.bubble::before {
   height: 0;
   width: 0;
   border-radius: 0;
@@ -126,27 +127,6 @@ a {
   border-bottom: 10px solid transparent;
   border-right: 10px solid #fff;
 }
-.preview.my {
-  flex-direction: row-reverse;
-}
-.preview.my .bubble_wrap {
-  flex-direction: row-reverse;
-}
-.preview.my .preview_pic {
-  display: none;
-}
-.preview.my .preview_nick {
-  display: none;
-}
-.preview.my .bubble {
-  background-color: #FAE100;
-}
-.preview.my .bubble::before {
-  left: auto;
-  right: -10px;
-  border-top: 10px solid #FAE100;
-  border-right: 10px solid transparent;
-}
 
 .login_container {
   width: 100%;
@@ -155,7 +135,6 @@ a {
 }
 
 .login {
-  border: 2px solid red;
   height: 100%;
   min-height: 460px;
   display: flex;
@@ -276,8 +255,6 @@ a.preview_wrap .preview:hover {
   display: flex;
   align-items: self-end;
   padding-left: 6px;
-  white-space: nowrap;
-  margin-right: 10px;
 }
 
 .chat_form {
